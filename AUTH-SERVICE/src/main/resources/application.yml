@@ -1,0 +1,10 @@
+
+spring:
+  application:
+    name: AUTH-SERVICE
+server:
+  port: 9898
+eureka:
+  instance:
+    prefer-ip-address: true
+    ip-address: 127.0.0.1

@@ -1,0 +1,42 @@
+spring:
+  application:
+    name: MCP_API_GATEWAY
+  cloud:
+    gateway:
+      discovery:
+        locator:
+          enabled: true
+      routes:
+        - id: MCP-BACKEND
+          uri: lb://MCP-BACKEND
+          predicates:
+            - Path=/api/v1/videos/**
+          filters:
+            - AuthenticationFilter
+
+        - id: AUTH-SERVICE
+          uri: lb://AUTH-SERVICE
+          predicates:
+            - Path=/api/v1/auth/**
+          filters:
+            - AuthenticationFilter
+
+management:
+  endpoint:
+    gateway:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: '*'
+  info:
+    env:
+      enabled: true
+
+server:
+  port: 8989
+
+eureka:
+  instance:
+    prefer-ip-address: true
+    ip-address: 127.0.0.1
