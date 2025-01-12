@@ -4,6 +4,7 @@ FROM eclipse-temurin:21-jdk AS build
 
 WORKDIR /app
 
+RUN apt-get update && apt-get install -y maven
 # copy pom.xml and install dependencies first to leverage the cache
 COPY pom.xml .
 RUN mvn dependency:go-offline -B
