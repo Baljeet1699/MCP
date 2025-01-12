@@ -17,3 +17,5 @@ FROM eclipse-temurin:21-jdk-alpine
 
 COPY --from=build /app/target/*.jar /app/eurekaServer.jar
 ENTRYPOINT ["java", "-jar", "/app/eurekaServer.jar"]
+
+
