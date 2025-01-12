@@ -1,5 +1,5 @@
 #FIRST STAGE
-FROM maven:3.8.5-jdk-11-slim AS build
+FROM maven:3.8.5-jdk-17-slim AS build
 
 WORKDIR /app
 
