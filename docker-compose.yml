@@ -24,14 +24,14 @@ services:
       dockerfile: Dockerfile
     container_name: backend
     environment:
-      SERVER_PORT: 8080
+      SERVER_PORT: 8081
       MYSQL_HOST: mysql
       MYSQL_PORT: 3306
       MYSQL_DB: mcp_db
       MYSQL_USER: root
       MYSQL_PASSWORD: root
     ports:
-      - "8080:8080"
+      - "8081:8081"
     depends_on:
       - mysql
 
