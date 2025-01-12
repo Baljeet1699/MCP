@@ -16,7 +16,7 @@ pipeline{
         // stage 1 : checkout code from git
         stage('checkout'){
             steps{
-                git branch: "${env.BRANCH_NAME}", url: "https://github.com/Baljeet1699/MCP.git"
+                git branch:"${env.BRANCH_NAME}", credentialsId:"GithubCred", url: "https://github.com/Baljeet1699/MCP.git"
             }
         }
 
