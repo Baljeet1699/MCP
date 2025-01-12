@@ -31,7 +31,7 @@ services:
       MYSQL_USER: root
       MYSQL_PASSWORD: root
     ports:
-      - "8080:8080"
+      - "8081:8081"
     depends_on:
       - mysql
 
